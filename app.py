@@ -101,31 +101,6 @@ def main():
                 except Exception as e:
                     st.error(f"❌ Error processing PDF: {str(e)}")
                     st.info("Make sure the PDF file is not corrupted and contains readable content.")
-    
-    # Instructions
-    with st.expander("ℹ️ How to use"):
-        st.markdown("""
-        1. **Upload** a PDF file using the file uploader above
-        2. **Click** the "Extract Text" button to start OCR processing
-        3. **Wait** for the processing to complete (may take a few moments for large files)
-        4. **Copy** the extracted text from the text area
-        5. **Download** the text as a .txt file if needed (optional)
-        
-        **Note:** This tool uses OCR (Optical Character Recognition) to extract text from PDF files.
-        It works best with clear, high-quality scanned documents or image-based PDFs.
-        """)
-    
-    # Technical info
-    with st.expander("🔧 Technical Details"):
-        st.markdown("""
-        This application uses:
-        - **pdf2image** to convert PDF pages to images
-        - **pytesseract** (Tesseract OCR) to extract text from images
-        - **Streamlit** for the web interface
-        
-        The OCR process converts each page of your PDF into an image and then
-        uses machine learning to recognize and extract the text content.
-        """)
 
 if __name__ == "__main__":
     main()
